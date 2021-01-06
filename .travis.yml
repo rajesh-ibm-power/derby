@@ -16,5 +16,5 @@ addons:
      - maven
 script:
     - ant build
-    - cd maven2
+    - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
     - mvn test
