@@ -1,16 +1,12 @@
 language: java
-compiler:
-  - gcc
-  - clang
+jdk:
+  - openjdk10
   
 dist: xenial
 
 arch:
   - amd64
   - ppc64le
-  
-jdk:
-  - openjdk10
 
 addons:
   apt:
@@ -18,7 +14,6 @@ addons:
      - ant 1.10.7
      - maven
 script:
-    - jdk_switcher use openjdk10
     - ant build
     - cd maven2
     - mvn test
