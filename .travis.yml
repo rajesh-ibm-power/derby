@@ -8,6 +8,9 @@ dist: xenial
 arch:
   - amd64
   - ppc64le
+  
+jdk:
+  - openjdk10
 
 addons:
   apt:
@@ -15,6 +18,7 @@ addons:
      - ant 1.10.7
      - maven
 script:
+    - jdk_switcher use openjdk10
     - ant build
-    - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+    - cd maven2
     - mvn test
