@@ -1,0 +1,21 @@
+language: java
+
+compiler:
+  - gcc
+  - clang
+  
+dist: xenial
+
+arch:
+  - amd64
+  - ppc64le
+
+addons:
+  apt:
+    packages:
+     - ant
+     - maven
+script:
+    - ant
+    - cd maven2
+    - mvn clean test
