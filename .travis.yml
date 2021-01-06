@@ -1,5 +1,6 @@
 language: java
-
+jdk:
+  - oraclejdk8
 compiler:
   - gcc
   - clang
@@ -16,6 +17,6 @@ addons:
      - ant 1.10.7
      - maven
 script:
-    - ant
+    - ant build
     - cd maven2
     - mvn clean test
