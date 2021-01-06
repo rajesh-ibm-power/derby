@@ -17,4 +17,4 @@ addons:
 script:
     - ant build
     - cd maven2
-    - mvn clean test
+    - mvn test
